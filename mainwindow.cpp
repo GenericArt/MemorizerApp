@@ -33,7 +33,6 @@ void MainWindow::on_btn_verseQuest_released()
 
 void MainWindow::go_home()
 {
-//    qDebug() << "Going Home";
     ui->stackedWidget->setCurrentIndex(0);
 }
 

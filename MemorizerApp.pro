@@ -35,3 +35,17 @@ HEADERS += \
 FORMS += \
         mainwindow.ui \
     versequestpage.ui
+
+#install_it.path = %{buildDir}
+#install_it.files += %{sourceDir}/test.json
+
+#INSTALLS += install_it
+
+
+
+copydata.commands = $(COPY_DIR) $$PWD/data $$OUT_PWD
+first.depends = $(first) copydata
+export(first.depends)
+export(copydata.commands)
+QMAKE_EXTRA_TARGETS += first copydata
+

@@ -3,6 +3,7 @@
 
 #include <QWidget>
 
+
 namespace Ui {
 class versequestpage;
 }
@@ -20,12 +21,6 @@ public:
 private slots:
     void on_btn_skip_released();
     void on_btn_check_released();
-//    void on_btn_quit_released();
-
-
-
-//public slots:
-//    void on_btn_quit_released();
 
 private:
     Ui::versequestpage *ui;
