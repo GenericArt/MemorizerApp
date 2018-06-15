@@ -55,6 +55,7 @@ void versequestpage::next_question()
 {
     std::map<std::string, std::string> verse1 = verseData["verseDict"]["verse1"];
 
+    // Need to cause seed to change
     auto decoyWords1 = verseData["decoyWords1"][std::rand() % verseData["decoyWords1"].size()];
     std::vector<std::string> decoyWords2 = verseData["decoyWords2"][std::rand() % verseData["decoyWords1"].size()];
     std::vector<std::string> decoyWords3 = verseData["decoyWords3"][std::rand() % verseData["decoyWords1"].size()];
@@ -71,26 +72,29 @@ void versequestpage::next_question()
 
     ui->label_vqHead->setText(QString::fromUtf8(verse1["verseID"].c_str()));
     ui->textEdit_vqQuestion->setText(QString::fromUtf8(verse1["verseQuest"].c_str()));
-
+    int btnNum = 0;
     for ( int i = 0; i < ui->buttonGroup_top->buttons().size(); i++)
     {
 //        printf("%s - %s - %s", decoyWords2[0].c_str(), decoyWords2[1].c_str(), decoyWords2[2].c_str());
 //        QString::fromUtf8(decoyWords2[i].c_str())
 
         // Problem with getting single button out..
-        QList<QAbstractButton*> buttonss = ui->buttonGroup_top->buttons();
-        QAbstractButton *button = ui->buttonGroup_top->button(i);
-        button->setText("foo");
+//        QList<QAbstractButton*> buttonss = ui->buttonGroup_top->buttons();
+//        QButtonGroup * topGroup = ui->buttonGroup_top;
+//        auto button = topGroup->button(1);
+//        button->setText("foo");
     }
-
+    btnNum = 0;
     foreach(QAbstractButton *button, ui->buttonGroup_middle->buttons())
     {
-        button->setText("Yeah");
+        button->setText(QString::fromUtf8(decoyWords2[btnNum].c_str()));
+        btnNum += 1;
     }
-
+    btnNum = 0;
     foreach(QAbstractButton *button, ui->buttonGroup_bottom->buttons())
     {
-        button->setText("Yeah");
+        button->setText(QString::fromUtf8(decoyWords3[btnNum].c_str()));
+        btnNum += 1;
     }
 }
 
