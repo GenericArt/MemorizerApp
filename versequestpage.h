@@ -2,7 +2,7 @@
 #define VERSEQUESTPAGE_H
 
 #include <QWidget>
-
+//#include <vector>
 
 namespace Ui {
 class versequestpage;
@@ -24,6 +24,9 @@ private slots:
 
 private:
     Ui::versequestpage *ui;
+    void next_question();
+
+    std::vector<std::string> shuffle_the_list(std::vector<std::string> theList);
 
 
 };

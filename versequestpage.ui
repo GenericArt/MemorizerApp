@@ -356,7 +356,7 @@
     </widget>
    </item>
    <item row="0" column="0" alignment="Qt::AlignHCenter|Qt::AlignTop">
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="label_vqHead">
      <property name="font">
       <font>
        <pointsize>20</pointsize>
